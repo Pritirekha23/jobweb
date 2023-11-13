@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+
+  <!-- Make sure the path to spy.css is correct -->
+  <link rel="stylesheet" href="spy.css" />
+
+  <title>Your Dream</title>
+  
+</head>
+<body>
+  <!-- Header Starts -->
+<!-- Header Starts -->
+<div class="menu-bar">
+  <h1 class="logo">your<span>dream.</span></h1>
+  <img src="https://www.flaticon.com/svg/static/icons/svg/174/174857.svg" alt="" />
+  <div class="header__search">
+    <i class="material-icons">search</i>
+    <input type="text"/>
+    <span class="search-details">Search</span>
+  </div>
+
+  <div class="header__right">
+    <div class="headerOption">
+      <i class="material-icons headerOption__icon">home</i>
+      <h3>Home</h3>
+    </div>
+
+    <div class="headerOption">
+      <i class="material-icons headerOption__icon">supervisor_account</i>
+      <h3>My Network</h3>
+      <div class="dropdown-menu">
+        <ul>
+          <li><a href="#">Connection 1</a></li>
+          <li><a href="#">Connection 2</a></li>
+          <li><a href="#">Connection 3</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="headerOption">
+      <i class="material-icons headerOption__icon">business_center</i>
+      <h3 onclick="toggleDropdown()">Jobs</h3>
+      <div class="dropdown-content" id="jobsDropdown">
+        <a href="#">Popular Categories</a>
+        <a href="Itjobs.html">IT jobs</a>
+        <a href="salesjobs.html">Sales Jobs</a>
+        <a href="marketing.html">Marketing Jobns</a>
+        <a href="datascience.html">Data Science</a>
+        <a href="hrjobs.html">HR Jobs</a>
+        <a href="eng.html">Engineering Jobs</a>
+      </div>
+    </div>
+    
+    <script>
+      function toggleDropdown() {
+        var dropdown = document.getElementById("jobsDropdown");
+        dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+      }
+    </script>
+    
+    <div class="headerOption">
+      <i class="material-icons headerOption__icon">chat</i>
+      <h3>Messaging</h3>
+    </div>
+    
+    <div class="headerOption">
+      <i class="material-icons headerOption__icon">notifications</i>
+      <h3>Notifications</h3>
+    </div>
+    
+    <div class="headerOption">
+      <i class="material-icons headerOption__icon">account_circle</i>
+      <h3>Me</h3>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Main Body Starts -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const headerOptions = document.getElementById('headerOptions');
+        const jobForm = document.getElementById('jobForm');
+        const jobPostsContainer = document.getElementById('jobPosts');
+  
+        headerOptions.addEventListener('click', function (event) {
+          const selectedOption = event.target.closest('.headerOption');
+          if (selectedOption) {
+            const optionType = selectedOption.getAttribute('data-option');
+            // You can define actions based on the selected option
+            console.log(`Clicked on ${optionType}`);
+          }
+        });
+  
+        jobForm.addEventListener('submit', function (event) {
+          event.preventDefault();
+          // ... (No changes to the job post creation)
+        });
+  
+        // ... (No changes to the profile form event listener)
+      });
+    </script>
+    <link rel="stylesheet" href="spy.css" />
+    <div class="body__main">
+      <!-- Sidebar Starts -->
+      <div class="sidebar">
+        <div class="sidebar__top">
+          <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080" alt="" />
+          <i class="material-icons sidebar__topAvatar"> account_circle </i>
+          <h2>ganga pal</h2>
+          <h4>pal969004@gmail.com</h4>
+        </div>
+
+        <div class="sidebar__stats">
+          <div class="sidebar__stat">
+            <p>Who Viewed You</p>
+            <p class="sidebar__statNumber">2,453</p>
+          </div>
+          <div class="sidebar__stat">
+            <p>Views on post</p>
+            <p class="sidebar__statNumber">2,650</p>
+          </div>
+        </div>
+
+        <div class="sidebar__bottom">
+          <p>Recent</p>
+          <div class="sidebar__recentItem">
+            <span class="sidebar__hash">#</span>
+            <p>reactjs</p>
+          </div>
+          <div class="sidebar__recentItem">
+            <span class="sidebar__hash">#</span>
+            <p>programming</p>
+          </div>
+          <div class="sidebar__recentItem">
+            <span class="sidebar__hash">#</span>
+            <p>softwareengineering</p>
+          </div>
+          <div class="sidebar__recentItem">
+            <span class="sidebar__hash">#</span>
+            <p>design</p>
+          </div>
+          <div class="sidebar__recentItem">
+            <span class="sidebar__hash">#</span>
+            <p>developer</p>
+          </div>
+        </div>
+      </div>
+      <!-- Sidebar Ends -->
+
+      <!-- Feed Starts -->
+      <div class="feed">
+        <div class="feed__inputContainer">
+          <div class="feed__input">
+            <i class="material-icons"> create </i>
+            <form id="jobForm">
+                <div class="form-group">
+                  <label for="jobTitle">Job Title</label>
+                  <input type="text" id="jobTitle" placeholder="Enter job title" required />
+                </div>
+                <div class="form-group">
+                  <label for="jobDescription">Job Description</label>
+                  <textarea id="jobDescription" placeholder="Enter job description" required></textarea>
+                </div>
+                <button type="submit">Post Job</button>
+              </form>
+              
+            </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: #70b5f9" class="material-icons"> insert_photo </i>
+              <h4>Photo</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: #e7a33e" class="material-icons"> subscriptions </i>
+              <h4>Video</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: #c0cbcd" class="material-icons"> event_note </i>
+              <h4>Event</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: #7fc15e" class="material-icons"> calendar_view_day </i>
+              <h4>Write Article</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>Somanath Goudar</h2>
+              <p>Job Description</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <p>Message here</p>
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends -->
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>Somanath Goudar</h2>
+              <p>Job Description</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <p>Message here</p>
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends -->
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>Somanath Goudar</h2>
+              <p>Job Description</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <p>Message here</p>
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends -->
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>Somanath Goudar</h2>
+              <p>Job Description</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <p>Message here</p>
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends -->
+<!-- Post Starts -->
+<div class="post">
+    <div class="post__header">
+      <i class="material-icons sidebar__topAvatar"> account_circle </i>
+      <div class="post__info">
+        <h2>Somanath Goudar</h2>
+        <p>Job Description</p>
+      </div>
+    </div>
+  
+    <div class="post__body">
+      <p>Message here</p>
+      <!-- Add Picture Option -->
+      <div class="post__image">
+        <input type="file" id="postImage" accept="image/*" />
+        <label for="postImage" class="inputOption">
+          <i style="color: gray" class="material-icons"> add_a_photo </i>
+          <h4>Add Picture</h4>
+        </label>
+      </div>
+    </div>
+  
+    <div class="feed__inputOptions">
+      <div class="inputOption">
+        <i style="color: gray" class="material-icons"> thumb_up </i>
+        <h4>Like</h4>
+      </div>
+      <div class="inputOption">
+        <i style="color: gray" class="material-icons"> comment </i>
+        <h4>Comment</h4>
+      </div>
+      <div class="inputOption">
+        <i style="color: gray" class="material-icons"> share </i>
+        <h4>Share</h4>
+      </div>
+      <div class="inputOption">
+        <i style="color: gray" class="material-icons"> send </i>
+        <h4>Send</h4>
+      </div>
+    </div>
+  </div>
+  <!-- Post Ends -->
+  
+
+        <!-- Post Starts -->
+        <div class="post">
+          <div class="post__header">
+            <i class="material-icons sidebar__topAvatar"> account_circle </i>
+            <div class="post__info">
+              <h2>Soumya barik</h2>
+              <p>art and craftwork</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <input type="text" id="message here" placeholder="message here" required />
+          </div>
+
+          <div class="feed__inputOptions">
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="inputOption">
+              <i style="color: gray" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <div class="profile-section">
+            <!-- Profile Form -->
+            <form id="profileForm">
+              <h2>Create Your Profile</h2>
+              <input type="text" id="fullName" placeholder="Full Name" required />
+              <input type="text" id="email" placeholder="Email"  required />
+              <textarea id="bio" placeholder="Bio"></textarea>
+              <div class="post__image">
+                <input type="file" id="postImage" accept="image/*" />
+                <label for="postImage" class="inputOption">
+                  <i style="color: gray" class="material-icons"> add_a_photo </i>
+                  <h4>Add Picture</h4>
+                </label>
+              </div>
+              <button type="submit">Save Profile</button>
+            </form>
+          </div>
+        <!-- Post Ends -->
+      </div>
+      <!-- Feed Ends -->
+
+      <!-- Widgets Starts -->
+      <div class="widgets">
+        <div class="widgets__header">
+          <h2>jobs Clone</h2>
+          <i class="material-icons"> info </i>
+        </div>
+        <div class="widgets__article">
+          <div class="widgets__articleLeft">
+            <i class="material-icons"> fiber_manual_record </i>
+          </div>
+          <div class="widgets__articleRight">
+            <h4>government schemes</h4>
+            <p>Top news - 500 readers</p>
+          </div>
+        </div>
+
+        <div class="widgets__article">
+          <div class="widgets__articleLeft">
+            <i class="material-icons"> fiber_manual_record </i>
+          </div>
+          <div class="widgets__articleRight">
+            <h4>non-government schemes</h4>
+            <p>Top news - 4000 readers</p>
+          </div>
+        </div>
+
+        <div class="widgets__article">
+          <div class="widgets__articleLeft">
+            <i class="material-icons"> fiber_manual_record </i>
+          </div>
+          <div class="widgets__articleRight">
+            <h4>local jobs available</h4>
+            <p>Top news - 5000 readers</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Widgets Ends -->
+    </div>
+    <!-- Main Body Ends -->
+  </body>
+</html>
